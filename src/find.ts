@@ -20,7 +20,12 @@ const main = async () => {
   const findUnique = await prisma.post.findUnique({
     // Takes only unique fields inside where (id, phone etc.)
     where: {
-      id: 2,
+      id: 6,
+    },
+    select: {
+      title: true,
+      content: true,
+      authorName: true,
     },
   });
 
@@ -31,7 +36,7 @@ const main = async () => {
   //     },
   //   });
 
-  //   console.log({ findUnique });
+  console.log({ findUnique });
 };
 
 main();

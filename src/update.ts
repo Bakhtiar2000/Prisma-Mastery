@@ -3,26 +3,39 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 const updates = async () => {
-  const singleUpdate = await prisma.post.update({
+  //   const singleUpdate = await prisma.post.update({
+  //     where: {
+  //       id: 4,
+  //     },
+  //     data: {
+  //       title: "4th Title",
+  //       content: "4th Content",
+  //     },
+  //   });
+
+  //   const updateMany = await prisma.post.updateMany({
+  //     where: {
+  //       authorName: "Fahim",
+  //     },
+  //     data: {
+  //       published: true,
+  //     },
+  //   });
+
+  const upsert = await prisma.post.upsert({
     where: {
-      id: 4,
+      id: 1,
     },
-    data: {
-      title: "4th Title",
-      content: "4th Content",
+    update: {
+      title: "Updated title",
+    },
+    create: {
+      title: "Inserted title",
+      content: "New Content",
     },
   });
 
-  const updateMany = await prisma.post.updateMany({
-    where: {
-      authorName: "Fahim",
-    },
-    data: {
-      published: true,
-    },
-  });
-
-  //   console.log(singleUpdate);
+  console.log(upsert);
 };
 
 updates();
