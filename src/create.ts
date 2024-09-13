@@ -63,22 +63,23 @@ const main = async () => {
   // const createMany = await prisma.user.createMany({
   //   data: [
   //     {
-  //       title: "Here is my 3rd Title",
-  //       content: "Here is my 3rd Content",
-  //       authorName: "Salman",
+  //       username: "user6",
+  //       email: "user6@gmail.com",
+  //       role: UserRole.user,
   //     },
   //     {
-  //       title: "Here is my 4th Title",
-  //       content: "Here is my 4th Content",
-  //       authorName: "Jabir",
+  //       username: "user7",
+  //       email: "user7@gmail.com",
+  //       role: UserRole.admin,
   //     },
   //     {
-  //       title: "Here is my 5th Title",
-  //       content: "Here is my 5th Content",
-  //       authorName: "Nadim",
+  //       username: "user8",
+  //       email: "user8@gmail.com",
+  //       role: UserRole.user,
   //     },
   //   ],
   // });
+
   console.log(createPost);
 };
 
