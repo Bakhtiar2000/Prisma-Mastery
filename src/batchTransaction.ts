@@ -3,6 +3,7 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 const main = async () => {
+  // Transaction 1
   const createUser = prisma.user.create({
     data: {
       username: "bakhtiarFahim",
@@ -10,6 +11,7 @@ const main = async () => {
     },
   });
 
+  // Transaction 2
   const updateUser = prisma.user.update({
     where: {
       id: 8,
