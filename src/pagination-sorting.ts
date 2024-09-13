@@ -24,7 +24,6 @@ const paginationSorting = async () => {
       id: "asc",
     },
   });
-  console.log(sortData);
 };
 
 paginationSorting();
